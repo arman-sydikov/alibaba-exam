@@ -264,5 +264,44 @@ public class Test {
 - [ ] `s.length为10`
 
 #### 输出1000以内的素数
+```java
+public class Test {
+    public static boolean sushu(int num) {
+        for (int i=2; i<=Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        for (int j=2; j<=1000; j++) {
+            if (Test.sushu(j)) {
+                System.out.println(j + " 是素数");
+            }
+        }
+    }
+}
+```
 
 #### 实现一个时间复杂度为 O(n) 的算法，在存储一系列整数的数组中找出最大最小的两个？
+```java
+public class Test {
+    public static void main(String[] args) {
+        int[] test = {4, 5, 8, 1, 2, 0, 10};
+        int max = test[0];
+        int min = test[0];
+        for (int j=1; j<test.length; j++) {
+            if (test[j] > max) {
+                max = test[j];
+            }
+            if (test[j] < min) {
+                min = test[j];
+            }
+        }
+        System.out.println("max = " + max);
+        System.out.println("min = " + min);
+    }
+}
+```
